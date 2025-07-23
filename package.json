@@ -1,0 +1,43 @@
+{
+  "name": "simple-vite-react-monorepo",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcel-kuehn/simple-vite-react-monorepo.git"
+  },
+  "scripts": {
+    "dev:project-1": "npm run dev -w project-1",
+    "build:project-1": "npm run build -w project-1",
+    "preview:project-1": "npm run preview -w project-1",
+    "lint:project-1": "npm run lint -w project-1",
+    "dev:project-2": "npm run dev -w project-2",
+    "build:project-2": "npm run build -w project-2",
+    "preview:project-2": "npm run preview -w project-2",
+    "lint:project-2": "npm run lint -w project-2",
+    "lint": "npm run lint:project-1 && npm run lint:project-2",
+    "clean:dist": "rm -rf dist && mkdir dist",
+    "move:dist": "for p in packages/*; do if [ -d \"$p/dist\" ]; then mv \"$p/dist\" dist/$(basename $p); fi; done",
+    "build": "npm run clean:dist && npm run build:project-1 && npm run build:project-2 && npm run move:dist"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^24.0.15",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
+  }
+}

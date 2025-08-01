@@ -1,5 +1,5 @@
-import { Button } from "@shared/components/Button";
-import "@shared/styles/globals.css";
+import { Button } from "shared/components/Button";
+import "shared/styles/globals.css";
 function App() {
   return (
     <>

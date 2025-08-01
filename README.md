@@ -26,7 +26,7 @@ git clone git@github.com:marcel-kuehn/vite-react-multi-module-bundles.git
 2. Install dependencies:
 
 ```bash
-npm install -W
+npm install
 ```
 
 ## Development
@@ -36,6 +36,12 @@ npm install -W
 
 ```bash
 npm run dev:project-1
+```
+
+or
+
+```bash
+npm run dev -w project-1
 ```
 
 or
